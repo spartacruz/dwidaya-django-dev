@@ -1,0 +1,63 @@
+{% extends "flight_register/base.html" %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+    
+    <form action="" method="POST" autocomplete="off">        
+        {% csrf_token %}
+        {% if error%}
+            <div class="alert alert-danger" role="alert">
+                {{error}}
+            </div>
+        {% endif %}
+
+        <div class="row">
+            <div class="col-md">
+                {{form.flightfrom | as_crispy_field}}
+            </div>
+            <div class="col-md">
+                {{form.flightto | as_crispy_field}}
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md">
+                {{form.departuredate | as_crispy_field}}
+            </div>
+            <div class="col-md">
+                {{form.returndate | as_crispy_field}}
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md">
+                {{form.firstname | as_crispy_field}}
+            </div>
+            <div class="col-md">
+                {{form.lastname | as_crispy_field}}
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md">
+                {{form.mobile | as_crispy_field}}
+            </div>
+            <div class="col-md">
+                {{form.email | as_crispy_field}}
+            </div>
+        </div>
+        <div class="row">
+
+            <div class="col-md">
+                <a href="{% url 'flight_list' %}" class="btn btn-secondary btn-block btn-lg">
+                    <i class="fas fa-stream"></i> Back to list
+                </a>
+            </div>
+
+            <div class="col-md">
+                <button type="submit" class="btn btn-success btn-block btn-lg"><i class="fas fa-database"></i> Submit</button>
+            </div>
+        </div>
+        
+    </form>
+{% endblock content %}

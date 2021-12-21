@@ -1,0 +1,74 @@
+[
+{
+    "model": "flight_register.flight",
+    "pk": 1,
+    "fields": {
+        "flight_code": "LHR",
+        "flight_location": "London, Heathrow"
+    }
+},
+{
+    "model": "flight_register.flight",
+    "pk": 2,
+    "fields": {
+        "flight_code": "CGK",
+        "flight_location": "Jakarta, Soekarno Hatta"
+    }
+},
+{
+    "model": "flight_register.flight",
+    "pk": 3,
+    "fields": {
+        "flight_code": "HLP",
+        "flight_location": "Jakarta, Halim Perdana Kusuma"
+    }
+},
+{
+    "model": "flight_register.flight",
+    "pk": 4,
+    "fields": {
+        "flight_code": "SOC",
+        "flight_location": "Solo, Adi Sumarmo"
+    }
+},
+{
+    "model": "flight_register.flight",
+    "pk": 5,
+    "fields": {
+        "flight_code": "DPS",
+        "flight_location": "Bali, Ngurah Rai"
+    }
+},
+{
+    "model": "flight_register.flight",
+    "pk": 6,
+    "fields": {
+        "flight_code": "DJJ",
+        "flight_location": "Jayapura, Sentani"
+    }
+},
+{
+    "model": "flight_register.flight",
+    "pk": 7,
+    "fields": {
+        "flight_code": "PDG",
+        "flight_location": "Padang, Minangkabau"
+    }
+},
+{
+    "model": "flight_register.flight",
+    "pk": 8,
+    "fields": {
+        "flight_code": "JFK",
+        "flight_location": "New York, John F. Kennedy"
+    }
+},
+{
+    "model": "flight_register.flight",
+    "pk": 9,
+    "fields": {
+        "flight_code": "AMS",
+        "flight_location": "Amsterdam, Schiphol"
+    }
+}
+]

@@ -1,0 +1,50 @@
+{% extends "flight_register/base.html" %}
+
+{% block content %}
+    <table class="table table-borderless">
+        <thead class="border-bottom font-weight-bold">
+            <tr>
+                <td class="align-middle">First Name</td>
+                <td class="align-middle">Last Name</td>
+                <td class="align-middle">Mobile</td>
+                <td class="align-middle">Email</td>
+                <td class="align-middle">Flight From</td>
+                <td class="align-middle">Flight To</td>
+                <td class="align-middle">Departure Date</td>
+                <td class="align-middle">Return Date</td>
+                <td class="align-middle">
+                    <a href="{% url 'flight_insert' %}" class="btn btn-outline-success">
+                        <i class="fas fa-plus"></i> Add New
+                    </a>
+                </td>
+            </tr>
+        </thead>
+        <tbody>
+            {% for customer in customer_list %}
+                <tr>
+                    <td class="align-middle">{{customer.firstname}}</td>
+                    <td class="align-middle">{{customer.lastname}}</td>
+                    <td class="align-middle">{{customer.mobile}}</td>
+                    <td class="align-middle">{{customer.email}}</td>
+                    <td class="align-middle">{{customer.flightfrom}}</td>
+                    <td class="align-middle">{{customer.flightto}}</td>
+                    <td class="align-middle">{{customer.departuredate}}</td>
+                    <td class="align-middle">{{customer.returndate}}</td>
+                    <td class="align-middle">
+                        <a href="{% url 'flight_update' customer.id %}" class="btn text-secondary">
+                            <i class="far fa-edit"></i>
+                        </a>
+
+                        <form action="{% url 'flight_delete' customer.id %}" method="POST" class="d-inline">
+                            {% csrf_token %}
+                            <button type="submit" class="btn">
+                                <i class="far fa-trash-alt text-danger"></i>
+                            </button>
+                        </form>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a class="btn btn-success float-right" href="{% url 'flight_export' %}"><i class="fas fa-database"></i> Export Encrypted Data</a>
+{% endblock content %}
